@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //this function generates an emmail adress.
+        function generateRFC(form){
+            document.getElementById("RFC").innerHTML=form.elements["pat"].value
+            +form.elements["mat"].value+form.elements["nom"].value+form.elements["nac"].value;
+            form.reset();
+            form.elements["pat"].focus;
+            form.elements['mat'].disabled=true;
+            form.elements['nom'].disabled=true;
+            form.elements['nac'].disabled=true;
+        }//end generateEmail
+    </script>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <p>
+    <h3>Ingrece los datos necesarios para generar tu RFC</h3>
+    <form>
+        Primeras 2 letra del apellido paterno:
+        <input type="text" id="pat" size="10" autofocus onchange="this.form.elements['mat'].disabled=false">
+        <br><br>
+        Primera letra del apellido materno:
+        <input type="text" id="mat" size="10" disabled autofocus onchange="this.form.elements['nom'].disabled=false">
+        <br><br>
+        Primera letra del nombre:
+        <input type="text" id="nom" size="10" disabled autofocus onchange="this.form.elements['nac'].disabled=false">
+        <br><br>
+        Dijite su fecha de nacimiento con el siguiente formato aammdd:
+        <input type="num" id="nac" size="10" disabled>
+        <br><br>
+        <input type="button" value="generar RFC" onclick="generateRFC(this.form);">
+    </form>
+    <p id="RFC"></p>
+</p>
+<a class="2" href="index.html" style="text-align: center;">Volver</a>
+</body>
+</html>

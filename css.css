@@ -1,0 +1,27 @@
+*{text-align: center;
+    background-color:#c7c8c8;
+ }
+
+ .p{
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #242424;
+ } 
+ a{
+   text-align: center;
+   padding: 2em 2em;
+   margin: 2em;
+   display: inline-block;
+   border: solid 2px rgb(155, 155, 155);
+   text-transform: uppercase;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: x-large;
+
+}
+body{
+   color:#242424;
+}
+#button{
+   color:white;
+
+}
