@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURP and RFC</title>
+    <script>
+        function generarCurp(form){
+            document.getElementById("curp").innerHTML=form.elements["pat"].value
+            +form.elements["mat"].value
+            +form.elements["nom"].value
+            +form.elements["nac"].value
+            +form.elements["gen"].value
+            +form.elements['ent'].value
+            +form.elements["2pat"].value
+            +form.elements["2mat"].value
+            +form.elements["2nom"].value;
+            form.reset();
+            form.elements["pat"].focus;
+            form.elements['mat'].disabled=true;
+            form.elements['nom'].disabled=true;
+            form.elements['nac'].disabled=true;
+            form.elements['gen'].disabled=true;
+            form.elements['ent'].disabled=true;
+            form.elements['2pat'].disabled=true;
+            form.elements['2mat'].disabled=true;
+            form.elements['2nom'].disabled=true; 
+        }  
+        function generateRFC(form){
+            document.getElementById("RFC").innerHTML=form.elements["pat"].value
+            +form.elements["mat"].value
+            +form.elements["nom"].value
+            +form.elements["nac"].value;
+            form.reset();
+            form.elements["pat"].focus;
+            form.elements['mat'].disabled=true;
+            form.elements['nom'].disabled=true;
+            form.elements['nac'].disabled=true; 
+    }
+
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <h3>Ingrece los datos necesarios para generar tu Curp</h3>
+    <form>
+        Primeras 2 letras del Apellido Paterno:
+        <input type="text" id="pat" autofocus onchange="this.form.elements['mat'].disabled=false" >
+        <br><br>
+        Primera letra del Apellido Materno:
+        <input type="text" id="mat" disabled autofocus onchange="this.form.elements['nom'].disabled=false">
+        <br><br>
+        Primera letra del primer Nombre:
+        <input type="text" id="nom"  disabled autofocus onchange="this.form.elements['nac'].disabled=false">
+        <br><br>
+        Ingrese su fecha de nacimiento con el siguiente formato (AA/MM/DD):
+        <input type="text" id="nac"  disabled autofocus onchange="this.form.elements['gen'].disabled=false">
+        <br><br>
+        Ingrese su género:
+        <input type="text" id="gen"  disabled autofocus onchange="this.form.elements['ent'].disabled=false">
+        <br><br>
+        Ingrese la abrebiacion oficial de su entidad federativa:
+        <input type="text" id="ent"  disabled autofocus onchange="this.form.elements['2pat'].disabled=false">
+        <br><br>
+        Ingrese la segunda consonante de su apellido Paterno:
+        <input type="text" id="2pat"  disabled autofocus onchange="this.form.elements['2mat'].disabled=false">
+        <br><br>
+        Ingrese la segunda consonante de su apellido materno:
+        <input type="text" id="2mat"  disabled autofocus onchange="this.form.elements['2nom'].disabled=false">
+        <br><br>
+        Ingrese la segunda consonante de su primer nombre:
+        <input type="text" id="2nom" disabled>
+        <br><br>
+        <button type="button"onclick="generarCurp(this.form);">Generar Curp</button>
+        <br><br><br><br>
+    </form>
+    <p id="curp"></p>
+    <p>
+    <h3>Ingrece los datos necesarios para generar tu RFC</h3>
+        <form>
+            Primeras 2 letra del apellido paterno:
+            <input type="text" id="pat" size="10" autofocus onchange="this.form.elements['mat'].disabled=false">
+            <br><br>
+            Primera letra del apellido materno:
+            <input type="text" id="mat" size="10" disabled autofocus onchange="this.form.elements['nom'].disabled=false">
+            <br><br>
+            Primera letra del nombre:
+            <input type="text" id="nom" size="10" disabled autofocus onchange="this.form.elements['nac'].disabled=false">
+            <br><br>
+            Dijite su fecha de nacimiento con el siguiente formato (AA/MM/DD):
+            <input type="num" id="nac" size="10" disabled>
+            <br><br>
+            <input type="button" value="generar RFC" onclick="generateRFC(this.form);">
+        </form>
+    <p id="RFC"></p>
+   
+</body>
+</html>
